@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  background-color: black;
+}
+
+textarea {
+  background-color: black;
+  font-family: sans-serif;
+}
+
+.notes {
+  border: 3px solid teal;
+  border-radius: 20px;
+  width: 95%;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  color: white;
+  background-color: black;
+  overflow: hidden;
+  resize: none;
+}
+
+.notes:focus {
+  outline: 0px solid transparent;
+}
+
+button {
+  font-size: 12px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: cyan;
+}
+
+.myContainer {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  background-color: black;
+}
+
+.controls {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: teal;
+  overflow: hidden;
+}
+
+#renderArea {
+  text-align: left;
+  margin: auto;
+  padding: 5px;
+  width: 95%;
+  height: 100%;
+  border: 3px solid teal;
+  border-radius: 20px;
+  background-color: white;
+}
