@@ -23,10 +23,7 @@ textarea {
   margin-top: 50px;
   color: white;
   background-color: black;
-  overflow: hidden;
-    overflow-y: auto;
   resize: none;
-    
 }
 
 .notes:focus {
@@ -49,10 +46,13 @@ button:hover {
   margin-bottom: 0;
   width: 100%;
   background-color: black;
-  
- 
+  overflow: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
 
 .controls {
   padding: 0;
@@ -66,6 +66,10 @@ button:hover {
 }
 
 #renderArea {
+  display: block;
+  overflow-y: scroll;
+  min-height: 50px;
+  max-height: 500px;
   text-align: left;
   margin: auto;
   padding: 5px;
@@ -74,5 +78,5 @@ button:hover {
   border: 3px solid teal;
   border-radius: 20px;
   background-color: white;
-     
+  overflow-y: scroll;
 }
