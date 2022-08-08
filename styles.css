@@ -24,7 +24,9 @@ textarea {
   color: white;
   background-color: black;
   overflow: hidden;
+    overflow-y: auto;
   resize: none;
+    
 }
 
 .notes:focus {
@@ -47,7 +49,10 @@ button:hover {
   margin-bottom: 0;
   width: 100%;
   background-color: black;
+  
+ 
 }
+
 
 .controls {
   padding: 0;
@@ -69,4 +74,5 @@ button:hover {
   border: 3px solid teal;
   border-radius: 20px;
   background-color: white;
+     
 }
