@@ -22,12 +22,14 @@
 
   <body>
     <div class="controls">
-      <button id="clearBtn" onclick="clearNote()">Clear</button>
-      <button id="saveBtn" onclick="saveNote()">Save</button>
-      <button id="log" onclick="renderMe()">Render</button>
+      <button type="button" id="clearBtn" onclick="clearNote()">Clear</button>
+      <button type="button" id="saveBtn" onclick="saveNote()">Save</button>
+      <button type="button" id="log" onclick="renderMe()">Render</button>
     </div>
     <div class="myContainer">
       <textarea
+                title="notes"
+                placeholder="Daily Notes"
         id="notes"
         spellcheck="false"
         class="notes"
