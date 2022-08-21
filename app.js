@@ -2,7 +2,15 @@
 'use strict';
 const myNote = document.getElementById("notes");
 const renderArea = document.getElementById("renderArea");
+const password = document.getElementById("pwdArea");
+const pSpan = document.getElementById("pwordSpan");
+
 let short_words;
+
+function copyPwd() {
+  let temp = password.select();
+  navigator.clipboard.writeText(password.value);
+}
 
 fetch("./short_words.json")
 .then(response => {
@@ -13,7 +21,13 @@ fetch("./short_words.json")
 });
 
 function pword() {
-  myNote.value += `\nPassword: ${genPassword()}`;
+  if (pSpan.style.display === "none" || !pSpan.style.display) {
+    pSpan.style.display = "inherit";
+    password.value = genPassword();
+  } else {
+    pSpan.style.display = "none";
+    password.value = '';
+  }
 }
 
 function incl(arr, k) {

@@ -55,6 +55,7 @@ button:hover {
 }
 
 .controls {
+  display: flex;
   padding: 0;
   margin: 0;
   position: fixed;
@@ -63,6 +64,23 @@ button:hover {
   width: 100%;
   background-color: teal;
   overflow: hidden;
+}
+
+#pwordSpan {
+  align-items: center;
+  display: none;
+}
+
+#pwdArea {
+  width: 160px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  height: 80%;
+}
+
+#copy {
+  margin-left: 50px;
 }
 
 #renderArea {
