@@ -9,10 +9,6 @@ html {
   background-color: black;
 }
 
-label {
-  display: none;
-}
-
 textarea {
   background-color: black;
   font-family: sans-serif;
