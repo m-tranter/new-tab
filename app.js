@@ -1,7 +1,6 @@
 
 'use strict';
 const myNote = document.getElementById("notes");
-const renderArea = document.getElementById("renderArea");
 const password = document.getElementById("pwdArea");
 const pSpan = document.getElementById("pwordSpan");
 
@@ -21,23 +20,15 @@ fetch("./short_words.json")
 });
 
 function pword() {
-  if (pSpan.style.display === "none" || !pSpan.style.display) {
-    pSpan.style.display = "inherit";
+  if (pSpan.classList.contains("d-none")) {
+    pSpan.classList.remove("d-none");
+    pSpan.classList.add("d-inline-block");
     password.value = genPassword();
   } else {
-    pSpan.style.display = "none";
+    pSpan.classList.remove("d-inline-block");
+    pSpan.classList.add("d-none");
     password.value = '';
   }
-}
-
-function incl(arr, k) {
-  // Because no Array.includes() on IE version at work.
-  for (var i=0; i<arr.length; i++) {
-    if (arr[i] === k) {
-      return true;
-    }
-  }
-  return false;
 }
 
 function randomElem(arr) {
@@ -52,21 +43,18 @@ function shuffle(arr) {
     arr[j] = temp
   }
 }
+
 function genPassword() {
   let elems = [];
   // Get three random words.
   while (elems.length < 3) {
     var temp = randomElem(short_words); 
-    if (!incl(elems, temp)) {
+    if (!elems.includes(temp)) {
       elems.push(temp);
     }
   }
-
-  // Make one word all caps.
   temp = Math.floor(Math.random() * elems.length);
   elems[temp] = elems[temp].toUpperCase();
-
-  // Also include a number & a special character.
   var special = ['!', '"', '^', '*', '(', ')', '-', '_', '£', '$', 
     '%', '+', '=', '[', ']', '{', '}', ',', '.', '#', '?', '/',
     '<', '>'];
@@ -82,7 +70,6 @@ function saveNote() {
   let myDate = new Date();
   myDate = myDate.toLocaleDateString()
   let dateStr = myDate.replace('/','_');
-
   let fname = '';
   for (let i=0; i< msg.length; i++) {
     let ch = msg[i];
@@ -109,6 +96,3 @@ function logText() {
   console.log(myNote.value);
 }
 
-function renderMe() {
-  renderArea.innerHTML = myNote.value;
-}
