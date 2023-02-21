@@ -18,10 +18,11 @@
   </head>
 
   <body>
-    <div class="controls py-1 mb-1 row w-100">
+    <div class="controls my-2 ms-2 row align-items-center">
+      <div class="col-auto p-0">
       <button
         type="button"
-        class="col-1 btn btn-light"
+        class="btn btn-sm btn-light mx-1"
         id="clearBtn"
         onclick="clearNote()"
       >
@@ -29,7 +30,7 @@
       </button>
       <button
         type="button"
-        class="col-1 btn btn-light mx-1"
+        class="btn btn-sm btn-light mx-1"
         id="saveBtn"
         onclick="saveNote()"
       >
@@ -37,22 +38,23 @@
       </button>
       <button
         type="button"
-        class="col-1 btn btn-light"
+        class="btn btn-sm btn-light mx-1"
         id="pwd"
         onclick="pword()"
       >
         Pwd
       </button>
-      <div id="pwordSpan" class="col-3 d-none">
+      </div>
+      <div id="pwordSpan" class="p-0 col d-none">
         <button
           type="button"
-          class="btn btn-light"
+          class="btn btn-sm btn-light mx-1"
           id="copy"
           onclick="copyPwd()"
         >
           <i class="fa fa-copy"></i>
         </button>
-        <input type="text" disabled id="pwdArea" />
+        <input class="align-middle" type="text" disabled id="pwdArea" />
       </div>
     </div>
     <div class="row main mx-1">
